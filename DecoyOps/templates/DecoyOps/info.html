@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DecoyOpsInfo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'info.css' %}">
+</head>
+<body>
+    
+    <!-- starting with a sticky header div to keep the header at the top of the page. this will contain a fluid container for full widthe as well as the nav bar and if the user is logged in, the navbar will have a logout option which is checked with is_authenticated-->
+    <div class="sticky-header">
+        <div class="container-fluid">
+            <h1><span style = "font-weight: normal">DecoyOps</span></h1>
+            <ul class="nav justify-content-center custom-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/info">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/work">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a style ="color: #000000" class="nav-link" href="{% url 'DecoyOps:logout' %}">Logout</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- creating the first customised fluid container with its own styling which differs from the header container and contains an iframe video with a heading to stipulate what you are watching-->
+    <div class="container-fluid" style="width: 100%; padding-top: 0px; height: 1200px; background-color: #1C1C1C">
+        <div class="row">
+            <h1 style= "color: #FFFFFF; font-size: 80px; margin-left: 200px; margin-top:50px; font-weight: 200">Showreel_2020.<p style= "color: #FFFFFF; font-size: 15px"> Showreel/Portfolio of Ryno Eksteen</p></h1>
+        
+
+            <iframe src="https://player.vimeo.com/video/438495935?h=eca0736039" style = "width:80%; margin-left: 200px; margin-top: -50px" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    
+    <!-- We now have a jumbotron containing information regarding the person in this site and bootstrap columns were used to seperate the text-->
+    <div class="jumbotron"  style = " background: #DCDCDC">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 style = "font-weight: 300;font-size: 250px; color: #000000; margin-left: -70px">DecoyOps</h1>
+            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 style = "font-weight: 100"><br>Portfolio of Ryno Eksteen </h4>
+                        
+                        <h4><br>About
+                            <br>
+                            <br>
+                            - - -
+                        </h4>
+                        
+                        <h5 style = "font-weight: 200"><br>I specialize in motion design, vfx,<br> animation and art direction.
+                            <br>
+                            <br>
+                            Based in Cape Town, UTC+2 (SAST)
+                            <br>
+                            <br>
+                            Living that remote work life since 2012
+                            <br>
+                            <br>
+                            Fluent in English and Afrikaans
+                            <br>
+                            <br>
+                            (◞≼◉ื≽◟ ;益;◞≼◉ื≽◟)Ψ
+                        </h5>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h4 style = "margin-bottom: 20px; margin-left: 150px">
+                            <br>
+                            <br>
+                            <br>
+                            Skills & Proficiencies
+                            <br>
+                            <br>
+                            - - -
+                        </h4>
+                        <h5 style = "font-weight: 200; margin-left: 150px"><br>
+                            SideFX Houdini | Redshift | Davinci Resolve
+                            <br>
+                            <br>
+                            Maxon Cinema4D | Adobe Design Suite
+                            <br>
+                            <br>
+                            Research & Development | Playing in a sandbox
+                            <br>
+                            <br>
+                            ( ´ ∀ `)ノ～ ♡
+                        </h5>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- We finish off with a footer div using bootstrap columns to seperate all text and tags-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" style="padding-bottom: 50px">
+                    <h3 style="margin-right: 35px; ">Get in touch:</h3>
+                    <a style="font-size: 25px; color: #000000; font-weight: 100" href="mailto:decoyopsmotion@gmail.com">decoyopsmotion@gmail.com</a>
+                    <h3 style="font-size: 25px; font-weight: 100; padding-top:15px">๏[-ิ_•ิ]๏</h3>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <a style="font-weight: 200; color: #000000;" href="https://www.behance.net/decoy">Behance</a>
+                    <a style="font-weight: 200; color: #000000" href="https://www.instagram.com/decoyops/"><br><br>Instagram</a>
+                    <a style="font-weight: 200; color: #000000" href="https://www.linkedin.com/in/decoymotion/"><br><br>LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

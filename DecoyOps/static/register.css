@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap")'
+
+.container {
+    margin-top: 230px;
+    background-color: #3c4043;
+    border: 3px solid #81a6e4;
+    padding: 20px;
+}
+
+a {
+    color: #000000;
+    transition: color 0.3s;
+}
+
+ul li {
+    margin-bottom: 50px;
+}
+
+.custom-form {
+    margin-top: 10px;
+}
+
+.custom-btn {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 18px;
+}
+
+.custom-btn:hover {
+    background-color: #DCDCDC;
+}
+

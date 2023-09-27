@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DecoyOpsTextiles</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'textiles.css' %}">
+</head>
+<body>
+    <!-- starting with a sticky header div to keep the header at the top of the page. this will contain a fluid container for full widthe as well as the nav bar and if the user is logged in, the navbar will have a logout option which is checked with is_authenticated-->
+    <div class="sticky-header">
+        <div class="container-fluid">
+            <h1><span style="font-weight: normal">DecoyOps</span></h1>
+            <ul class="nav justify-content-center custom-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/info">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/work">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a style ="color: #000000" class="nav-link" href="{% url 'DecoyOps:logout' %}">Logout</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- We now have a jumbotron containing information regarding the contents in this page-->
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <h1>TEXTILE INNOVATIONS</h1>
+            </div>
+            <div class="row" style = "margin-bottom: 100px;">
+                <h5>
+                Bolder Creative and myself were approached by |REDACTED/NDA|
+                clothing brand to visualize innovative, cutting edge textile
+                concepts that are being researched, developed and prototyped.
+                We had immense creative freedom on conceptualising the various
+                technologies implemented by these garments.
+                </h5>
+                <h5><br>
+                My role in the production was to develop technical and creative
+                systems which had to convey their proprietary thread/weaving
+                designs. Create abstract methods to convey comfort, malleability
+                and movement.
+                </h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- creating the first customised fluid container with its own styling which differs from the header container and contains an iframe video with a heading to stipulate what you are watching-->
+    <div class="container-fluid" style="width: 100%; margin-top: -32px; height: 1200px; background-color: #1C1C1C">
+        <div class="row">
+            <iframe style = "margin-left: 45px" src="https://player.vimeo.com/video/769358619?h=8a521b58ed" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- creating the second customised fluid container with its own styling which differs from the header container and contains the images with their headings and links to the individual pages. the will happen using bootrap columns in medium but the images are fluid to fill as much space as was required. i have removed the gutters between images -->
+    <div class="container-fluid" style="width: 100%; padding-top: 0px; height: 1270px; background-color: #1C1C1C">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <div class="image-container">
+                    <img src="{% static 'images/textiles/textileino1.jpg' %}" alt="TEXTILE INNOVATIONS" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image-container">
+                    <img src="{% static 'images/textiles/textileino2.jpg' %}" alt="TEXTILE INNOVATIONS" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image-container">
+                    <img src="{% static 'images/textiles/textileino3.jpg' %}" alt="TEXTILE INNOVATIONS" class="img-fluid">
+                        <h1 style = "text-align:left; margin-top:50px; font-weight:100"> <a href="{% url 'DecoyOps:SUPERSKIN' %}" style = "color: #FFFFFF">Previous</h1>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image-container">
+                    <img src="{% static 'images/textiles/textileino4.jpg' %}" alt="TEXTILE INNOVATIONS" class="img-fluid">
+                        <h1 style = "text-align:right; margin-top:50px; font-weight:100"> <a href="{% url 'DecoyOps:info' %}" style = "color: #FFFFFF">Info</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- We finish off with a footer div using bootstrap columns to seperate all text and tags-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" style="padding-bottom: 50px">
+                    <h3 style="margin-right: 35px; color: #000000">Get in touch:</h3>
+                    <a style="font-size: 25px; color: #000000; font-weight: 100" href="mailto:decoyopsmotion@gmail.com">decoyopsmotion@gmail.com</a>
+                    <h3 style="font-size: 25px; font-weight: 100; padding-top:15px">๏[-ิ_•ิ]๏</h3>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <a style="font-weight: 200; color: #000000;" href="https://www.behance.net/decoy">Behance</a>
+                    <a style="font-weight: 200; color: #000000" href="https://www.instagram.com/decoyops/"><br><br>Instagram</a>
+                    <a style="font-weight: 200; color: #000000" href="https://www.linkedin.com/in/decoymotion/"><br><br>LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DecoyOpsBase</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+    
+    <!-- starting with a sticky header div to keep the header at the top of the page. this will contain a fluid container for full width as well as the nav bar which at this stage until login is complete will not function except for contact -->
+    <div class="sticky-header">
+        <div class="container-fluid">
+            <h1><span style = "font-weight: normal">DecoyOps</span></h1>
+            <ul class="nav justify-content-center custom-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- this jumbotron allows for all content to be styled and centered and will contain all the neccessary tools for logging in and logging out-->
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12" style = "margin-top: 60px">
+                    <h1>You need to login to view this website</h1>
+                    <h3 style = "margin-top: 60px; padding-left:60px; font-weight:100">Please login or click register below for a new user account
+                    </h3>
+                    <hr style="color: #DCDCDC; height:4px; margin-top: 60px; width: 89%">
+                    {% block content %}{% endblock %}
+                    <br>
+                    <br>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'DecoyOps:logout' %}">Logout</a></li>
+                    {% else %}
+                        <li style = "color: #FFFFFF"><a href="{% url 'DecoyOps:register' %}">Register</a></li>
+                        <br>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- We finish off with a footer div using bootstrap columns to seperate all text and tags-->
+    <div class="footer">
+        <div class="container">
+            <div class="row" style = "margin-top: 20px">
+                <div class = "col-md-3">
+                    <h3 style = "margin-right: 35px; ">Get in touch:</h3>
+                    <a style="font-size: 25px; color: #000000; font-weight: 100" href="mailto:decoyopsmotion@gmail.com">decoyopsmotion@gmail.com</a>
+                    <h3 style="font-size: 25px; font-weight: 100; padding-top:15px">๏[-ิ_•ิ]๏</h3>
+                </div>
+                <div class = "col-md-3"></div>
+                <div class = "col-md-3"></div>
+                <div class = "col-md-3">
+                    <a style = "font-weight: 200; color: #000000; padding-top: px" href = "https://www.behance.net/decoy">Behance</a>
+                    <a style = "font-weight: 200; color: #000000" href = "https://www.instagram.com/decoyops/"><br><br>Instagram</a>
+                    <a style = "font-weight: 200; color: #000000" href = "https://www.linkedin.com/in/decoymotion/"><br><br>LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
