@@ -12,7 +12,7 @@ PORT = 8080
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fg0y(5e^nn9zp8lb5^j$fa4d*w7j8vueyqsblh!#w125y%1s-o'
+SECRET_KEY = *****
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
